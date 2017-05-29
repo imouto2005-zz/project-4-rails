@@ -9,18 +9,18 @@ class FoodsController < ApplicationController
   end
 
   def create
-    p "Food params: #{params}"
-    @food = Food.new(name: params[:])
+    p "Food params: #{params[:name]}"
+    @food = Food.new(name: params[:name], cuisine: params[:cuisine], place: params[:place])
     @food.user_id = current_user.id
-    @food.save
-  end
-
-  def update
+    @food.save!
   end
 
   def destroy
     @food = Food.find(params[:id])
     @food.destroy
+  end
+
+  def update
   end
 
   def new
@@ -31,4 +31,5 @@ class FoodsController < ApplicationController
 
   def edit
   end
+
 end

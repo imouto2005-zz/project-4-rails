@@ -7,7 +7,6 @@ class ActivitiesController < ApplicationController
     p current_user
     @activities = Activity.where(user_id: current_user.id)
     p @activities
-    # @activities = {name: 'HIHIHI'}
     render json: @activities
   end
 
@@ -30,7 +29,7 @@ class ActivitiesController < ApplicationController
     @activity = Activity.find(params[:id])
     @activity.destroy
   end
-  
+
   def edit
   end
 

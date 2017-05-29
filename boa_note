@@ -1,0 +1,9 @@
+POST /auth (sign up) (email, password, password_confirmation, callback_success_url <- hard code gibberish) <- all in form data
+POST /auth/sign_in (email, password <- form data) gives you user info in the body, token in the header
+DELETE /auth/sign_out (pass token in header)
+
+
+all routes that are protected, you need to pass in the token so that you can access the route
+
+fssPTGCythM8d4kx3834OQ token
+13KWa1AIvo9Hp6nG3PtlTw client

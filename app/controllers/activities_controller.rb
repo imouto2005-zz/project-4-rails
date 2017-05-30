@@ -2,7 +2,7 @@ require 'byebug'
 
 class ActivitiesController < ApplicationController
   include HTTParty
-  before_action :authenticate_user! # , only: [:index]
+  # before_action :authenticate_user! # , only: [:index]
   def index
     p 'current user here'
     p current_user
@@ -32,7 +32,9 @@ class ActivitiesController < ApplicationController
   end
 
   def get_meetups
+    p 'getting meetups'
     api_key = ENV['MEETUP_API_KEY']
+    p api_key
     response = HTTParty.get('https://api.meetup.com/find/events?key=' + api_key + '&sign=true')
     body = JSON.parse(response.body)
     render json: body

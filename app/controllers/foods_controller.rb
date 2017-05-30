@@ -1,7 +1,7 @@
 
 class FoodsController < ApplicationController
   include HTTParty
-  before_action :authenticate_user!
+  # before_action :authenticate_user!
 
   def index
     @foods = Food.where(user_id: current_user.id)
@@ -27,7 +27,7 @@ class FoodsController < ApplicationController
     location = params[:location]
     p params
     p "location: #{location}"
-    response = HTTParty.get('https://maps.googleapis.com/maps/api/place/textsearch/json?query=restaurants+in+' + location + '&key=' + api_key)
+    response = HTTParty.get('https://maps.googleapis.com/maps/api/place/textsearch/json?query=restaurants+in+singapore+' + location + '&key=' + api_key)
     body = JSON.parse(response.body)
     render json: body
   end

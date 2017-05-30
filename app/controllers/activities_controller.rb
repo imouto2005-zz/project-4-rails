@@ -1,6 +1,7 @@
 require 'byebug'
 
 class ActivitiesController < ApplicationController
+  include HTTParty
   before_action :authenticate_user! # , only: [:index]
   def index
     p 'current user here'
@@ -28,6 +29,14 @@ class ActivitiesController < ApplicationController
   def destroy
     @activity = Activity.find(params[:id])
     @activity.destroy
+  end
+
+  def get_meetups
+    api_key = ENV['MEETUP_API_KEY']
+    response = HTTParty.get('https://api.meetup.com/find/events?key=' + api_key + '&sign=true')
+    body = JSON.parse(response.body)
+    render json: body
+    p body
   end
 
   def edit

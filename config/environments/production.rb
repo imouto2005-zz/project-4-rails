@@ -3,7 +3,7 @@ Rails.application.configure do
 
   # Default Mailer Host
   Rails.application.routes.default_url_options[:host] = 'domain.com'
-  
+
   # Code is not reloaded between requests.
   config.cache_classes = true
 
@@ -12,6 +12,9 @@ Rails.application.configure do
   # and those relying on copy on write to perform better.
   # Rake tasks automatically ignore this option for performance.
   config.eager_load = true
+
+  #configure httparty
+  config.gem "httparty"
 
   # Full error reports are disabled and caching is turned on.
   config.consider_all_requests_local       = false

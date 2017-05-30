@@ -1,4 +1,6 @@
+
 class FoodsController < ApplicationController
+  include HTTParty
   before_action :authenticate_user!
 
   def index
@@ -18,6 +20,16 @@ class FoodsController < ApplicationController
   def destroy
     @food = Food.find(params[:id])
     @food.destroy
+  end
+
+  def location_search
+    api_key = ENV['GOOGLE_PLACES_API_KEY']
+    location = params[:location]
+    p params
+    p "location: #{location}"
+    response = HTTParty.get('https://maps.googleapis.com/maps/api/place/textsearch/json?query=restaurants+in+' + location + '&key=' + api_key)
+    body = JSON.parse(response.body)
+    render json: body
   end
 
   def update

@@ -11,6 +11,7 @@ gem 'dotenv-rails', groups: [:development, :test]
 gem 'pry'
 gem 'omniauth'
 gem 'devise'
+gem 'figaro'
 # devise auth token
 gem 'devise_token_auth'
 gem 'rack-cors', :require => 'rack/cors'

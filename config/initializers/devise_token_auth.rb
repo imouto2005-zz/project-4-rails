@@ -4,7 +4,7 @@ DeviseTokenAuth.setup do |config|
   # this to false to prevent the Authorization header from changing after
   # each request.
   config.change_headers_on_each_request = false
-  
+
 
 
   # By default, users will need to re-authenticate after 2 weeks. This setting
@@ -45,6 +45,6 @@ DeviseTokenAuth.setup do |config|
 
   # By default, only Bearer Token authentication is implemented out of the box.
   # If, however, you wish to integrate with legacy Devise authentication, you can
-  # do so by enabling this flag. NOTE: This feature is highly experimental!
+  # do so by enabling this flag. : This feature is highly experimental!
   # config.enable_standard_devise_support = false
 end

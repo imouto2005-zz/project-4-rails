@@ -2,7 +2,7 @@ require 'byebug'
 
 class ActivitiesController < ApplicationController
   include HTTParty
-  # before_action :authenticate_user! # , only: [:index]
+  before_action :authenticate_user! # , only: [:index]
   def index
     p 'current user here'
     p current_user

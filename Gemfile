@@ -12,6 +12,7 @@ gem 'pry'
 gem 'omniauth'
 gem 'devise'
 gem 'figaro'
+gem 'rails_12factor', group: :production
 # devise auth token
 gem 'devise_token_auth'
 gem 'rack-cors', :require => 'rack/cors'

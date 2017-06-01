@@ -1,7 +1,7 @@
 
 class FoodsController < ApplicationController
   include HTTParty
-  # before_action :authenticate_user!
+  before_action :authenticate_user!
 
   def index
     @foods = Food.where(user_id: current_user.id)

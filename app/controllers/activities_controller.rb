@@ -8,7 +8,7 @@ class ActivitiesController < ApplicationController
     p current_user
     @activities = Activity.where(user_id: current_user.id)
     p @activities
-    # render json: @activities
+    render json: @activities
   end
 
   def create

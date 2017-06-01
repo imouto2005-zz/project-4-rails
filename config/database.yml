@@ -82,4 +82,4 @@ production:
   <<: *default
   database: project-4-rails_production
   username: project-4-rails
-  password: <%= ENV['DATABASE_URL'] %>
+  password: <%= ENV['PROJECT-4-RAILS_DATABASE_PASSWORD'] %>

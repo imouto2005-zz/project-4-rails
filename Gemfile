@@ -6,7 +6,7 @@ git_source(:github) do |repo_name|
 end
 
 # dotenv for storing secrets
-gem 'dotenv-rails', groups: [:development, :test]
+gem 'dotenv-rails'
 # pry
 gem 'pry'
 gem 'omniauth'

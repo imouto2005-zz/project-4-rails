@@ -20,16 +20,18 @@ class ActivitiesController < ApplicationController
     @activity.save
   end
 
+  def destroy
+    @activity = Activity.find(params[:id])
+    @activity.destroy
+  end
+
   def update
     @activity = Activity.find(params[:id])
     @activity.update(activity_params)
     redirect_to(activity_path(@activity))
   end
 
-  def destroy
-    @activity = Activity.find(params[:id])
-    @activity.destroy
-  end
+
 
   def get_meetups
     p 'getting meetups'
